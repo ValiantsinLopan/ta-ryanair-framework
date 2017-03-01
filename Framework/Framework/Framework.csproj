@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DriversPaths.resx</DependentUpon>
     </Compile>
+    <Compile Include="Steps\CheckFlyOutFlyInDateSteps.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
     <Compile Include="WebDriver\DriverFactory.cs" />
   </ItemGroup>
@@ -79,6 +80,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DriversPaths.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Elements\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
