@@ -42,6 +42,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exception\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Steps\" />
+    <Folder Include="Tools\" />
+    <Folder Include="UI\Elements\" />
+    <Folder Include="UI\Pages\" />
+    <Folder Include="WebDriver\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
