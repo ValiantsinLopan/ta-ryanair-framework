@@ -18,7 +18,7 @@ namespace NUnitTests
             DriverFactory.InitDriver(Configuration.CurrentBrowserName, Configuration.ChromeBinPath);
         }
 
-                [OneTimeTearDown]
+        [OneTimeTearDown]
         public void BaseFixtureTearDown()
         {
             DriverFactory.CleanupDriver();
