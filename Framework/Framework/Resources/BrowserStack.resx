@@ -117,19 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChromeDriver" xml:space="preserve">
-    <value>Framework/bin/Debug</value>
+  <data name="Browser" xml:space="preserve">
+    <value>browser</value>
+    <comment>Firefox, Safari, IE, Chrome, Opera, Edge</comment>
   </data>
-  <data name="EdgeDriver" xml:space="preserve">
-    <value>Framework</value>
+  <data name="BrowserName" xml:space="preserve">
+    <value>browserName</value>
+    <comment>firefox, chrome, internet explorer, safari, opera, edge, iPad, iPhone, android
+Default: chrome</comment>
   </data>
-  <data name="FirefoxBinary" xml:space="preserve">
-    <value>C:\Program Files\Mozilla Firefox\firefox.exe</value>
+  <data name="BrowserVersion" xml:space="preserve">
+    <value>browser_version</value>
   </data>
-  <data name="FirefoxDriver" xml:space="preserve">
-    <value>Framework\bin\Debug</value>
+  <data name="BuildName" xml:space="preserve">
+    <value>build</value>
   </data>
-  <data name="IEDriver" xml:space="preserve">
-    <value>Framework\bin\Debug</value>
+  <data name="Key" xml:space="preserve">
+    <value>browserstack.key</value>
+  </data>
+  <data name="LocalTesting" xml:space="preserve">
+    <value>browserstack.local</value>
+    <comment>true, false. Default: false</comment>
+  </data>
+  <data name="MobileDevice" xml:space="preserve">
+    <value>device</value>
+  </data>
+  <data name="MobileDeviceOrientation" xml:space="preserve">
+    <value>deviceOrientation</value>
+    <comment>portrait, landscape 
+Default: portrait</comment>
+  </data>
+  <data name="Os" xml:space="preserve">
+    <value>os</value>
+    <comment>WINDOWS, OS X</comment>
+  </data>
+  <data name="OsVersion" xml:space="preserve">
+    <value>os_version</value>
+    <comment>Windows: XP, 7, 8, 8.1 and 10
+OS X: Snow Leopard, Lion, Mountain Lion, Mavericks, Yosemite, El Capitan</comment>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>project</value>
+  </data>
+  <data name="TestRunName" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>http://hub-cloud.browserstack.com/wd/hub</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>browserstack.user</value>
+  </data>
+  <data name="WindowResolution" xml:space="preserve">
+    <value>resolution</value>
   </data>
 </root>
