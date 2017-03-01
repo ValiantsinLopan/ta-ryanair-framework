@@ -12,6 +12,7 @@ namespace NUnitTests
     [TestFixture]
     public class BaseTest
     {
+        
         [OneTimeSetUp]
         public void BaseFixtureSetUp()
         {
@@ -23,5 +24,6 @@ namespace NUnitTests
         {
             DriverFactory.CleanupDriver();
         }
+
     }
 }
