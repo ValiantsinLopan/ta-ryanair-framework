@@ -7,6 +7,7 @@ namespace Framework.UI.Pages
     {
         public const string Url = "https://www.ryanair.com/gb/en/";
         public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']"));
+        public IWebElement FlightFromField => DriverFactory.Driver.FindElement(By.XPath("//*[@id='label-airport-selector-from']"));
 
 
         public void Open()
