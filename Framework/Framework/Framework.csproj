@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DriversPaths.resx</DependentUpon>
     </Compile>
+    <Compile Include="Steps\Steps.cs" />
     <Compile Include="UI\Pages\LogInPage.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
     <Compile Include="WebDriver\DriverFactory.cs" />
