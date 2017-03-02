@@ -15,7 +15,7 @@ namespace NUnitTests
         [OneTimeSetUp]
         public void BaseFixtureSetUp()
         {
-            DriverFactory.InitDriver(Configuration.CurrentBrowserName, Configuration.ChromeBinPath);
+            DriverFactory.InitDriver();
         }
 
         [OneTimeTearDown]

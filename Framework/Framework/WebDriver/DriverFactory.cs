@@ -1,44 +1,55 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using Framework.Config;
+using Framework.Resources;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 
 namespace Framework.Webdriver
 {
     public static class DriverFactory
     {
-        public static void Open()
-        {
-            Driver.Navigate().GoToUrl("google.com");
-        }
-
         private const string Chrome = "chrome";
         private const string Firefox = "firefox";
         private const string Ie = "ie";
         private const string Edge = "edge";
-        private const string Opera = "opera";
         private const string Remote = "remote";
-
-        public static void CleanupDriver() { Driver.Quit(); }
 
         private static readonly ConcurrentDictionary<string, IWebDriver> DriversDictionary = new ConcurrentDictionary<string, IWebDriver>();
 
-        private static string CurrentTest => TestContext.CurrentContext.Test.ClassName;
-        public static IWebDriver Driver => DriversDictionary[CurrentTest];
+        public static void CleanupDriver() { Driver.Quit(); }
 
-        public static void InitDriver(string driverName, string driverPath)
+        public static IWebDriver Driver
         {
-            //TODO: implement
-            var driverId = TestContext.CurrentContext.Test.ClassName;
-            DriversDictionary.TryAdd(driverId, GetDriverInstance());
+            get
+            {
+                IWebDriver driver;
+                if (!DriversDictionary.TryGetValue(CurrentTest, out driver))
+                {
+                    InitDriver();
+                }
+
+                return driver;
+            }
         }
 
+        public static void InitDriver()
+        {
+            var driverId = TestContext.CurrentContext.Test.ClassName;
+            DriversDictionary.TryAdd(driverId, GetDriverInstance());
+            Driver.Manage().Window.Maximize();
+        }
+
+        private static string CurrentTest => TestContext.CurrentContext.Test.ClassName;
+
         /// <summary>
-        /// Creates driver specified by driver name
+        /// Creates driver specified by current test name
         /// </summary>
-        /// <param name="driver">driver name to create</param>
         /// <exception cref="InvalidOperationException">if driver with specified name wasn't found</exception>
         /// <returns></returns>
         private static IWebDriver GetDriverInstance()
@@ -61,10 +72,6 @@ namespace Framework.Webdriver
                     {
                         return GetEdgeDriver();
                     }
-                case Opera:
-                    {
-                        return GetOperaDriver();
-                    }
                 case Remote:
                     {
                         return GetRemoteDriver();
@@ -80,34 +87,31 @@ namespace Framework.Webdriver
 
         private static IWebDriver GetChromeDriver()
         {
-            var driver = new ChromeDriver(Configuration.ChromeBinPath);
-            driver.Manage().Window.Maximize();
-            return driver;
+            return new ChromeDriver(Configuration.ChromeBinPath);
         }
 
         private static IWebDriver GetFirefoxDriver()
         {
-            throw new NotImplementedException();
+            var service = FirefoxDriverService.CreateDefaultService(Configuration.FirefoxBinPath);
+            return new FirefoxDriver(service);
         }
 
         private static IWebDriver GetEdgeDriver()
         {
-            throw new NotImplementedException();
+            var service = EdgeDriverService.CreateDefaultService(Configuration.EdgeBinPath);
+            return new EdgeDriver(service);
         }
 
         private static IWebDriver GetIeDriver()
         {
-            throw new NotImplementedException();
+            var service = InternetExplorerDriverService.CreateDefaultService(Configuration.IeBinPath);
+            return new InternetExplorerDriver(service);
         }
 
         private static IWebDriver GetRemoteDriver()
         {
-            throw new NotImplementedException();
-        }
-
-        private static IWebDriver GetOperaDriver()
-        {
-            throw new NotImplementedException();
+            var capabilities = Configuration.LoadBrowserStackCapabilities();
+            return new RemoteWebDriver(new Uri(BrowserStack.URL), capabilities);
         }
     }
 }
