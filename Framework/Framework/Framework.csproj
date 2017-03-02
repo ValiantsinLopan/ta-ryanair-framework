@@ -73,6 +73,7 @@
       <DependentUpon>DriversPaths.resx</DependentUpon>
     </Compile>
     <Compile Include="Steps\CheckFlyOutFlyInDateSteps.cs" />
+    <Compile Include="UI\Pages\BookingFlightPage.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
     <Compile Include="WebDriver\DriverFactory.cs" />
   </ItemGroup>

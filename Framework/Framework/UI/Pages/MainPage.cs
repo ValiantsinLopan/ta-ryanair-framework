@@ -32,17 +32,13 @@ namespace Framework.UI.Pages
             AirportSelectorTo.Click();
             ToInput.SendKeys(destination);
             ContinueButton.Click();
-            //DriverFactory.Driver.FindElement(By.XPath($"//div[@id='search-container']//*[text()=\"{destination}\"]"));
-
         }
 
         public void SelectLeavingArrivalDate(string leavingDay, string arrivalDay)
         {
             ContinueButton.Click();
             LeavingDateInput.SendKeys(leavingDay);
-           
             ArrivalDateInput.SendKeys(arrivalDay);
-            
         }
     }
 }
