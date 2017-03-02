@@ -23,13 +23,26 @@ namespace Framework.Webdriver
         private static readonly ConcurrentDictionary<string, IWebDriver> DriversDictionary = new ConcurrentDictionary<string, IWebDriver>();
 
         public static void CleanupDriver() { Driver.Quit(); }
-        public static IWebDriver Driver => DriversDictionary[CurrentTest];
 
-        public static void InitDriver(string driverName, string driverPath)
+        public static IWebDriver Driver
         {
-            //TODO: implement
+            get
+            {
+                IWebDriver driver;
+                if (!DriversDictionary.TryGetValue(CurrentTest, out driver))
+                {
+                    InitDriver();
+                }
+
+                return driver;
+            }
+        }
+
+        public static void InitDriver()
+        {
             var driverId = TestContext.CurrentContext.Test.ClassName;
             DriversDictionary.TryAdd(driverId, GetDriverInstance());
+            Driver.Manage().Window.Maximize();
         }
 
         private static string CurrentTest => TestContext.CurrentContext.Test.ClassName;
@@ -74,39 +87,31 @@ namespace Framework.Webdriver
 
         private static IWebDriver GetChromeDriver()
         {
-            var driver = new ChromeDriver(Configuration.ChromeBinPath);
-            driver.Manage().Window.Maximize();
-            return driver;
+            return new ChromeDriver(Configuration.ChromeBinPath);
         }
 
         private static IWebDriver GetFirefoxDriver()
         {
             var service = FirefoxDriverService.CreateDefaultService(Configuration.FirefoxBinPath);
-            var driver = new FirefoxDriver(service);
-            driver.Manage().Window.Maximize();
-            return driver;
+            return new FirefoxDriver(service);
         }
 
         private static IWebDriver GetEdgeDriver()
         {
             var service = EdgeDriverService.CreateDefaultService(Configuration.EdgeBinPath);
-            var driver = new EdgeDriver(service);
-            driver.Manage().Window.Maximize();
-            return driver;
+            return new EdgeDriver(service);
         }
 
         private static IWebDriver GetIeDriver()
         {
             var service = InternetExplorerDriverService.CreateDefaultService(Configuration.IeBinPath);
-            var driver = new InternetExplorerDriver(service);
-            driver.Manage().Window.Maximize();
-            return driver;
+            return new InternetExplorerDriver(service);
         }
 
         private static IWebDriver GetRemoteDriver()
         {
-            var driver = new RemoteWebDriver(new Uri(BrowserStack.URL), Configuration.LoadBrowserStackCapabilities());
-            return driver;
+            var capabilities = Configuration.LoadBrowserStackCapabilities();
+            return new RemoteWebDriver(new Uri(BrowserStack.URL), capabilities);
         }
     }
 }
