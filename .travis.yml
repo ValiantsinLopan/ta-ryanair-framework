@@ -1,0 +1,8 @@
+language: csharp
+solution: Framework/Framework.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore Framework/Framework.sln
+after_script:
+  - nunit-console Framework/NUnitTests/bin/Release/NUnitTests.dll
