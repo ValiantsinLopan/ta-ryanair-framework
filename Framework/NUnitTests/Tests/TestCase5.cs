@@ -9,19 +9,17 @@ using Framework.Webdriver;
 
 namespace NUnitTests.Tests
 {
-    [TestFixture()]
+    [TestFixture, Parallelizable(ParallelScope.Fixtures)]
     public class TestCase5 : BaseTest
 
     {
         private CheckFlyOutFlyInDateSteps step = new CheckFlyOutFlyInDateSteps();
-        [SetUp]
         
-
         [Test]
         public void CheckFlightData()
         {
             step.OpenMainPage();
-            step.SelectFlight("Berlin Schönefeld", "Brussels", "4","5");
+            step.SelectFlight("Berlin", "Toulouse", "5","6");
             
         }
        
