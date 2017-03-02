@@ -10,10 +10,10 @@ namespace Framework.Tools
     {
         public static double ParsePrice(string price)
         {
-            string result = "";
-            if (!(string.IsNullOrEmpty(price)))
+            var result = "";
+            if (!string.IsNullOrEmpty(price))
             {
-                for (int i = 0; i < price.Length; i++)
+                for (var i = 0; i < price.Length; i++)
                 {
                     if (!char.IsDigit(price[i]) && price[i] == ' ')
                     {
@@ -23,7 +23,7 @@ namespace Framework.Tools
                 }
                 return Double.Parse(result);
             }
-            else return 0.0;                        
+            return 0.0;                        
         }
     }
 }
