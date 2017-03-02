@@ -6,6 +6,7 @@ namespace Framework.UI.Pages
     public class MainPage
     {
         public const string Url = "https://www.ryanair.com/gb/en/";
+        public IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.ClassName("farefinder-card "));
         public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']"));
 
         public void Open()
@@ -13,5 +14,9 @@ namespace Framework.UI.Pages
             DriverFactory.Driver.Navigate().GoToUrl(Url);
         }
 
+        public void OpenCheapFlight()
+        {
+            CheapFlightBtn.Click();
+        }
     }
 }
