@@ -1,11 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Tools;
+using Framework.UI.Pages;
+using Framework.Webdriver;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestCase3
+namespace Framework.Steps
 {
     public class LowestFareSteps
     {
@@ -15,13 +18,6 @@ namespace TestCase3
         public static void GoToMainPage()
         {
             MainPage.Open();
-        }
-
-        public static void ClickViewByMonth()
-        {
-            cheapFlightPage = new CheapFlightPage();
-            var viewByMonthBtn = cheapFlightPage.GetViewByMonthBtn();
-            viewByMonthBtn.Click();
         }
 
         /// <summary>
@@ -78,7 +74,7 @@ namespace TestCase3
         /// <returns> double, minPrice </returns>
         public static double GetMinPrice()
         {
-            var allPrices = cheapFlightPage.GetCalendarPrices();
+            List<IWebElement> allPrices = CheapFlightPage.CalendarPrices;
             var validListOfPrices = GetDaysWithPrices(allPrices);
             var minPrice = PriceParser.ParsePrice(validListOfPrices[0].Text);
             IWebElement lowestPrice = null;
@@ -91,11 +87,6 @@ namespace TestCase3
                 }
             }
             return minPrice;
-        }
-
-        public static void End()
-        {
-            WebDriver.KillDriver();
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestCase3
+namespace Framework.Tools
 {
-    public static class Tools
+    public static class PriceParser
     {
         public static double ParsePrice(string price)
         {
