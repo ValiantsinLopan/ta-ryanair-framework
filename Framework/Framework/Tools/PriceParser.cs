@@ -10,20 +10,17 @@ namespace Framework.Tools
     {
         public static double ParsePrice(string price)
         {
-            string result = "";
-            if (!(string.IsNullOrEmpty(price)))
+            var result = "";
+            if (string.IsNullOrEmpty(price)) return 0.0;
+
+            for (var i = 0; i < price.Length; i++)
             {
-                for (int i = 0; i < price.Length; i++)
-                {
-                    if (!char.IsDigit(price[i]) && price[i] == ' ')
-                    {
-                        result = price.Substring(i + 1);
-                        i++;
-                    }
-                }
-                return Double.Parse(result);
+                if (price[i] != ' ') continue;
+                result = price.Substring(i + 1);
+                break;
             }
-            else return 0.0;                        
+
+            return double.Parse(result);
         }
     }
 }

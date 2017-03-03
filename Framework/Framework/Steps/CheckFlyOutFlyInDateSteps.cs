@@ -33,7 +33,6 @@ namespace Framework.Steps
             
             BookingPage.SelectRegularTicketTo();
 
-            //BookingPage.SelectRegularTicketBack();
         }
         public bool IsPossibleSelectFirstBackTicket()
         {

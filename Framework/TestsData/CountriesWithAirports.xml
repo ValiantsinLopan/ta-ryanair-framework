@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AllCountries>
+  <country>
+    <name>Austria</name>
+    <airports>
+      <airport>Linz</airport>
+      <airport>Salzburg</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Belgium</name>
+    <airports>
+      <airport>Brussels</airport>
+      <airport>Brussels Charleroi</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Bulgaria</name>
+    <airports>
+      <airport>Sofia</airport>
+      <airport>Plovdiv</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Croatia</name>
+    <airports>
+      <airport>Pula</airport>
+      <airport>Rijeka</airport>
+      <airport>Zadar</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Cyprus</name>
+    <airports>
+      <airport>Larnaca</airport>
+      <airport>Paphos</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Czech</name>
+    <airports>
+      <airport>Brno</airport>
+      <airport>Ostrava</airport>
+      <airport>Prague</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Denmark</name>
+    <airports>
+      <airport>Aarhus</airport>
+      <airport>Billund</airport>
+      <airport>Copenhagen</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Estonia</name>
+    <airports>
+      <airport>Tallinn</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Finland</name>
+    <airports>
+      <airport>Tampere</airport>
+    </airports>
+  </country>
+  <country>
+    <name>France</name>
+    <airports>
+      <airport>Bergerac</airport>
+      <airport>Beziers</airport>
+      <airport>Biarritz</airport>
+      <airport>Bordeaux</airport>
+      <airport>Brest</airport>
+      <airport>Brive</airport>
+      <airport>Carcassonne</airport>
+      <airport>Clermont</airport>
+      <airport>Deauville</airport>
+      <airport>Dinard</airport>
+      <airport>Dole</airport>
+      <airport>Figari</airport>
+      <airport>Grenoble</airport>
+      <airport>La Rochelle</airport>
+      <airport>Lille</airport>
+      <airport>Limoges</airport>
+      <airport>Lorient</airport>
+      <airport>Lourdes</airport>
+      <airport>Marseille</airport>
+      <airport>Montpellier</airport>
+      <airport>Nantes</airport>
+      <airport>Nice</airport>
+      <airport>Nimes</airport>
+      <airport>Paris Beauvais</airport>
+      <airport>Paris Vatry</airport>
+      <airport>Perpignan</airport>
+      <airport>Poitiers</airport>
+      <airport>Rodez</airport>
+      <airport>St Etienne</airport>
+      <airport>Strasbourg</airport>
+      <airport>Toulouse</airport>
+      <airport>Tours Loire Valley</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Germany</name>
+    <airports>
+      <airport>Berlin Schönefeld</airport>
+      <airport>Bremen</airport>
+      <airport>Cologne</airport>
+      <airport>Dortmund</airport>
+      <airport>Dusseldorf Weeze</airport>
+      <airport>Frankfurt Hahn</airport>
+      <airport>Frankfurt International</airport>
+      <airport>Hamburg</airport>
+      <airport>Karlsruhe/Baden-Baden</airport>
+      <airport>Leipzig</airport>
+      <airport>Memmingen</airport>
+      <airport>Nuremberg</airport>
+      <airport>Stuttgart</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Greece</name>
+    <airports>
+      <airport>Athens</airport>
+      <airport>Chania</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Hungary</name>
+    <airports>
+      <airport>Budapest</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Italy</name>
+    <airports>
+      <airport>Bari</airport>
+      <airport>Bologna</airport>
+      <airport>Comiso</airport>
+      <airport>Milan Bergamo</airport>
+      <airport>Palermo</airport>
+      <airport>Pisa</airport>
+      <airport>Rome Ciampino</airport>
+      <airport>Turin</airport>
+      <airport>Venice Treviso</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Latvia</name>
+    <airports>
+      <airport>Riga</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Lithuania</name>
+    <airports>
+      <airport>Kaunas</airport>
+      <airport>Vilnius</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Malta</name>
+    <airports>
+      <airport>Malta</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Morocco</name>
+    <airports>
+      <airport>Marrakesh</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Netherlands</name>
+    <airports>
+      <airport>Amsterdam</airport>
+      <airport>Eindhoven</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Poland</name>
+    <airports>
+      <airport>Bydgoszcz</airport>
+      <airport>Gdansk</airport>
+      <airport>Katowice</airport>
+      <airport>Krakow</airport>
+      <airport>Lodz</airport>
+      <airport>Lublin</airport>
+      <airport>Poznan</airport>
+      <airport>Rzeszow</airport>
+      <airport>Szczecin</airport>
+      <airport>Warsaw Modlin</airport>
+      <airport>Wroclaw</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Portugal</name>
+    <airports>
+      <airport>Faro</airport>
+      <airport>Lisbon</airport>
+      <airport>Porto</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Romania</name>
+    <airports>
+      <airport>Bucharest</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Slovakia</name>
+    <airports>
+      <airport>Bratislava</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Spain</name>
+    <airports>
+      <airport>Alicante</airport>
+      <airport>Almeria</airport>
+      <airport>Barcelona</airport>
+      <airport>Barcelona Girona</airport>
+      <airport>Barcelona Reus</airport>
+      <airport>Fuerteventura</airport>
+      <airport>Gran Canaria</airport>
+      <airport>Ibiza</airport>
+      <airport>Lanzarote</airport>
+      <airport>Madrid</airport>
+      <airport>Malaga</airport>
+      <airport>Mallorca</airport>
+      <airport>Murcia</airport>
+      <airport>Santander</airport>
+      <airport>Seville</airport>
+      <airport>Tenerife South</airport>
+      <airport>Valencia</airport>
+      <airport>Vigo</airport>
+    </airports>
+  </country>
+  <country>
+    <name>Switzerland</name>
+    <airports>
+      <airport>Basel</airport>
+    </airports>
+  </country>
+  <country>
+    <name>United</name>
+    <airports>
+      <airport>Birmingham</airport>
+      <airport>Bristol</airport>
+      <airport>Cardiff</airport>
+      <airport>East Midlands</airport>
+      <airport>Edinburgh</airport>
+      <airport>Glasgow</airport>
+      <airport>Leeds Bradford</airport>
+      <airport>Liverpool</airport>
+      <airport>London Gatwick</airport>
+      <airport>London Luton</airport>
+      <airport>London Stansted</airport>
+      <airport>Manchester</airport>
+      <airport>Newcastle</airport>
+    </airports>
+  </country>
+</AllCountries>

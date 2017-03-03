@@ -12,7 +12,6 @@ namespace Framework.UI.Pages
         public const string Url = "https://www.ryanair.com/gb/en/";
         LogInForm LoginForm = new LogInForm();
 
-        //[FindsBy(How = How.XPath, Using = "//*[@class='core-btn-primary core-btn-block core-btn-big']")]
         public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-btn-primary core-btn-block core-btn-big']"));
         public IWebElement AirportSelectorFrom => DriverFactory.Driver.FindElement(By.XPath("//*[@id='label-airport-selector-from']"));
         public IWebElement AirportSelectorTo => DriverFactory.Driver.FindElement(By.XPath(".//*[@id='label-airport-selector-to']"));
@@ -20,11 +19,15 @@ namespace Framework.UI.Pages
         public IWebElement ToInput => DriverFactory.Driver.FindElement(By.XPath("//*[@class='col-destination-airport']//div[@class='disabled-wrap']/input"));
         public IWebElement LeavingDateInput => DriverFactory.Driver.FindElement(By.XPath(".//*[@class='container-from']//div[@class='disabled-wrap date-input']/input[1]"));
         public IWebElement ArrivalDateInput => DriverFactory.Driver.FindElement(By.XPath("//*[@class='container-to']//div[@class='disabled-wrap date-input']/input[1]"));
-        public IWebElement LogInButton => DriverFactory.Driver.FindElement(By.XPath("//*[@id='myryanair-auth-login']"));
-        
-        //Actions action = new Actions(DriverFactory.Driver);
+
         public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
         
+        public IWebElement LogInButton => DriverFactory.Driver.FindElement(By.XPath("//*[@id='myryanair-auth-login']"));
+        
+        public const string SearchContainerXPath = "//div[@id='search-container']";
+
+        public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
+        public IWebElement FlightsFrom => DriverFactory.Driver.FindElement(By.XPath(".//*[@class='col-departure-airport']//div[@class='disabled-wrap']/input"));
 
         public static void Open()
         {
@@ -55,5 +58,15 @@ namespace Framework.UI.Pages
         {
             CheapFlightBtn.Click();
         }
+
+        /// <summary>
+        /// Finds elements with name of airport
+        /// </summary>
+        /// <returns> element with name of airport </returns>
+        public IWebElement GetAirportName(string nameOfAirport)
+        {
+            return DriverFactory.Driver.FindElement(By.XPath($"{SearchContainerXPath}//*[text()=\"{nameOfAirport}\"]"));
+        }
+
     }
 }
