@@ -13,6 +13,7 @@ namespace Framework.UI.Pages
         public IWebElement SelectRegularToButton => DriverFactory.Driver.FindElement(By.XPath("//*[@id='outbound']//div[@class='flights-table-fares__fare standard']//button"));
         public IWebElement SelectRegularBackButton => DriverFactory.Driver.FindElement(By.XPath("//*[@id='inbound']//div[@class='flights-table-fares__fare standard']//button"));
         public IWebElement CantSelectFlightMessage => DriverFactory.Driver.FindElement(By.XPath("//*[@id='inbound']//span[@class='flights-table__notice-message']"));
+        public IWebElement FlightField => DriverFactory.Driver.FindElement(By.XPath("//*[contains(@id, 'flight')]"));
 
         public void SelectRegularTicketTo()
         {

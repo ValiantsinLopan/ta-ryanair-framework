@@ -10,7 +10,7 @@ namespace NUnitTests.Tests
 {
     [TestFixture]
     [Parallelizable(ParallelScope.Fixtures)]
-    class PreviousSearchTest
+    class PreviousSearchTest : BaseTest
     {
         public PreviousSearchSteps step;
 
@@ -19,13 +19,15 @@ namespace NUnitTests.Tests
         {
             step = new PreviousSearchSteps();
             step.Open();
+
         }
 
         [Test]
         public void CheckPreviousSearch()
-        {
-            
-
+        {           
+            step.SelectFlight("Berlin", "Brussels", "5", "5");
+            step.ClickOnFlightField();
+            step.Open();
         }
     }
 }
