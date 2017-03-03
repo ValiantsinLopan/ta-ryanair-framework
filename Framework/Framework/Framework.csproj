@@ -73,6 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DriversPaths.resx</DependentUpon>
     </Compile>
+    <Compile Include="Steps\PreviousSearchSteps.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
     <Compile Include="UI\Pages\CheapFlightPage.cs" />
     <Compile Include="WebDriver\DriverFactory.cs" />
