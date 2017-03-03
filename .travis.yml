@@ -1,15 +1,14 @@
 language: csharp
 dist: trusty
 sudo: required
-solution: Framework/Framework.sln
-before_install:
-  - sudo apt-get install nunit-console
-before_script:
-  - nuget restore Framework/Framework.sln
-after_script:
-  - nunit-console Framework/NUnitTests/bin/Debug/NUnitTests.dll
-script:
-  - xbuild Framework/Framework.sln
 os:  
   - linux
   - osx
+solution: Framework/Framework.sln
+before_install:
+  - sudo apt-get install nunit-console
+install:
+  - nuget restore Framework/Framework.sln
+script:
+  - xbuild /p:Configuration=Release Framework/Framework.sln
+  - nunit-console Framework/NUnitTests/bin/Release/NUnitTests.dll
