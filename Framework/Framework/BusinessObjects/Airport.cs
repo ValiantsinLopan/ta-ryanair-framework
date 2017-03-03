@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Framework.BusinessObjects
 {
@@ -11,7 +6,6 @@ namespace Framework.BusinessObjects
     {
         [XmlElement("airport")]
         public string AirportName { get; set; }
-
 
         public Airport()
         {

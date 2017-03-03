@@ -22,7 +22,8 @@ namespace NUnitTests
         [Test, TestCaseSource(typeof(DataProviders), "TestCaseWithCountries")]
         public void CheckCountriesAndAirports(string countryName, List<Airport> airports)
         {    
-            step.ClickFlightsFrom(countryName);
+            step.ClickFlightsFrom();
+            step.EnterCountryName(countryName);
             Assert.True(step.AirportsIsDisplayed(airports), $"problem with {countryName}");
         }
 

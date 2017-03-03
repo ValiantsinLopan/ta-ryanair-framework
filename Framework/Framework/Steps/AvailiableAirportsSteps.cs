@@ -1,13 +1,6 @@
 ﻿using Framework.BusinessObjects;
 using Framework.UI.Pages;
-using Framework.Webdriver;
-using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Framework.Steps
 {
@@ -20,33 +13,49 @@ namespace Framework.Steps
             MainPage.Open();
         }
 
-        public void ClickFlightsFrom(string countryName)
+        /// <summary>
+        /// Click on part of form "flights from"
+        /// </summary>
+        public void ClickFlightsFrom()
         {
             mainPage.FlightsFrom.Clear();
             mainPage.FlightsFrom.Click();
+        }
+
+        /// <summary>
+        /// Enter name of country in form "flights from"
+        /// </summary>
+        public void EnterCountryName(string countryName)
+        {
             mainPage.FlightsFrom.SendKeys(countryName);
         }
 
+        /// <summary>
+        /// Gets countries and airports from xml-file
+        /// </summary>
+        /// <returns> AllCountries with countries and airports </returns>
         public AllCountries DeserializeCountries(string path)
         {
-           return AllCountries.DeserialiseCountries(path);
+            return AllCountries.DeserialiseCountries(path);
 
         }
 
+        /// <summary>
+        /// Check that all airports is displayed
+        /// </summary>
+        /// <returns> true if all airports is displayed </returns>
         public bool AirportsIsDisplayed(List<Airport> airports)
         {
             bool checker = true;
-
             foreach (Airport currentAirport in airports)
             {
                 checker = mainPage.GetAirportName(currentAirport.AirportName).Displayed;
-                if(checker == false)
+                if (checker == false)
                 {
                     break;
                 }
             }
             return checker;
         }
-
     }
 }
