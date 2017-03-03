@@ -57,7 +57,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\CountriesAndAirportsDataSource.cs" />
+    <Compile Include="Tests\AvailiableAirportsTest.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="DataSources\PassengersCountDataSource.cs" />
     <Compile Include="Tests\LowestFareTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\CheckFlyOutFlyInDate.cs" />

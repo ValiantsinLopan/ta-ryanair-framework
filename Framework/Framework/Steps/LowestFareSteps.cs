@@ -12,8 +12,8 @@ namespace Framework.Steps
 {
     public class LowestFareSteps
     {
-        static CheapFlightPage cheapFlightPage;
-        static List<int> indexesOfEmptyDays;
+        public static CheapFlightPage cheapFlightPage;
+        public static List<int> indexesOfEmptyDays;
        
         public static void GoToMainPage()
         {
@@ -65,7 +65,7 @@ namespace Framework.Steps
             {
                 return true;
             }
-            else return false;
+            return false;
         }
 
         /// <summary>
@@ -77,12 +77,11 @@ namespace Framework.Steps
             List<IWebElement> allPrices = CheapFlightPage.CalendarPrices;
             var validListOfPrices = GetDaysWithPrices(allPrices);
             var minPrice = PriceParser.ParsePrice(validListOfPrices[0].Text);
-            IWebElement lowestPrice = null;
             foreach (var pricePerOneDay in validListOfPrices)
             {
                 if (PriceParser.ParsePrice(pricePerOneDay.Text) < minPrice)
                 {
-                    lowestPrice = pricePerOneDay;
+                    var lowestPrice = pricePerOneDay;
                     minPrice = PriceParser.ParsePrice(lowestPrice.Text);
                 }
             }
