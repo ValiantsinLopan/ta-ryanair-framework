@@ -37,6 +37,8 @@ namespace Framework.Config
 
         public static string CurrentBrowserName => Config.AppSettings.Settings["browser.current"].Value;
 
+        public static string CountriesPath => $"{SolutionPath}/{TestDataPaths.Default.CountriesWithAirports}";
+
         public static string ChromeBinPath => $"{SolutionPath}/{DriversPaths.ChromeDriver}";
         public static string FirefoxBinPath => $"{SolutionPath}/{DriversPaths.FirefoxDriver}";
         public static string EdgeBinPath => $"{SolutionPath}/{DriversPaths.EdgeDriver}";

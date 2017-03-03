@@ -8,12 +8,8 @@ namespace Framework.UI.Pages
     {
         public const string Url = "https://www.ryanair.com/gb/en/";
         public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
-
-        [FindsBy(How = How.XPath, Using = "//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']")]
-        public IWebElement ContinueButton;
-
-        [FindsBy(How = How.XPath, Using = ".//*[@id='search-container']/div[1]/div/form/div[2]/div/div/div[1]/div[2]/div[2]/div/div[1]/input")]
-        public IWebElement FlightsFrom;
+        public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']"));
+        public IWebElement FlightsFrom => DriverFactory.Driver.FindElement(By.XPath(".//*[@id='search-container']/div[1]/div/form/div[2]/div/div/div[1]/div[2]/div[2]/div/div[1]/input"));
         
         public const string  SearchContainerXPath = "//div[@id='search-container']";
 

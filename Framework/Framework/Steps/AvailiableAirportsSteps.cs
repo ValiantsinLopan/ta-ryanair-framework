@@ -22,12 +22,14 @@ namespace Framework.Steps
 
         public void ClickFlightsFrom(string countryName)
         {
+            mainPage.FlightsFrom.Clear();
             mainPage.FlightsFrom.Click();
             mainPage.FlightsFrom.SendKeys(countryName);
         }
 
-        public void DeserializeCountries()
+        public AllCountries DeserializeCountries(string path)
         {
+           return AllCountries.DeserialiseCountries(path);
 
         }
 
@@ -38,8 +40,11 @@ namespace Framework.Steps
             foreach (Airport currentAirport in airports)
             {
                 checker = mainPage.GetAirportName(currentAirport.AirportName).Displayed;
+                if(checker == false)
+                {
+                    break;
+                }
             }
-
             return checker;
         }
 

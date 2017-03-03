@@ -1,4 +1,7 @@
 ﻿using Framework.BusinessObjects;
+using Framework.Config;
+using Framework.Resources;
+using Framework.Steps;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -13,12 +16,12 @@ namespace Framework.Resources
     {
         public static IEnumerable TestCaseWithCountries()
             {
-            var data = AllCountries.DeserialiseCountries("C:\\Users\\Iryna_Bahatka1\\Documents\\CountriesWithAirports.xml");
+            AvailiableAirportsSteps steps = new AvailiableAirportsSteps();
+            var data = steps.DeserializeCountries(Configuration.CountriesPath);
                 foreach (Country currentCountry in data.Countries)
                 {
                     yield return new TestCaseData(currentCountry.CountryName, currentCountry.Airports);
                 }
             }
-        }
-    }
-}
+        } }
+
