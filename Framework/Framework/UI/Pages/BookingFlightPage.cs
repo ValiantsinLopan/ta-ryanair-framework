@@ -18,7 +18,6 @@ namespace Framework.UI.Pages
         {
             FirstFlightTo.Click();
             Thread.Sleep(3000);
-
             SelectRegularToButton.Click();
 
         }
