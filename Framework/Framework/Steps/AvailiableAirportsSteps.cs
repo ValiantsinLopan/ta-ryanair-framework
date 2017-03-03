@@ -1,4 +1,5 @@
-﻿using Framework.UI.Pages;
+﻿using Framework.BusinessObjects;
+using Framework.UI.Pages;
 using Framework.Webdriver;
 using OpenQA.Selenium;
 using System;
@@ -10,19 +11,19 @@ using System.Threading.Tasks;
 
 namespace Framework.Steps
 {
-   public class AvailiableAirportsSteps
+    public class AvailiableAirportsSteps
     {
         public MainPage mainPage = new MainPage();
 
         public void Open()
         {
-            mainPage.Open(); 
+            MainPage.Open();
         }
 
-        public void ClickFlightsFrom()
+        public void ClickFlightsFrom(string countryName)
         {
             mainPage.FlightsFrom.Click();
-            mainPage.FlightsFrom.SendKeys("Ireland");
+            mainPage.FlightsFrom.SendKeys(countryName);
         }
 
         public void DeserializeCountries()
@@ -30,9 +31,16 @@ namespace Framework.Steps
 
         }
 
-        public bool AirportsIsDisplayed(string nameOfAirport)
+        public bool AirportsIsDisplayed(List<Airport> airports)
         {
-            return mainPage.GetAirportName(nameOfAirport).Displayed;
+            bool checker = true;
+
+            foreach (Airport currentAirport in airports)
+            {
+                checker = mainPage.GetAirportName(currentAirport.AirportName).Displayed;
+            }
+
+            return checker;
         }
 
     }

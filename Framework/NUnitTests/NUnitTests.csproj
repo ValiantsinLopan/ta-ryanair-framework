@@ -49,7 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvailiableAirportsTest.cs" />
+    <Compile Include="Tests\AvailiableAirportsTest.cs" />
     <Compile Include="BaseTest.cs" />
     <Compile Include="Tests\LowestFareTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

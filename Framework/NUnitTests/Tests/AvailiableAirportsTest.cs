@@ -18,9 +18,9 @@ namespace NUnitTests
         {
             AvailiableAirportsSteps steps = new AvailiableAirportsSteps();
             steps.Open();
-            steps.ClickFlightsFrom();
+            steps.ClickFlightsFrom(countryName);
             
-            Assert.True(steps.AirportsIsDisplayed("Dublin"));
+            Assert.True(steps.AirportsIsDisplayed(airports));
         }
 
     }
