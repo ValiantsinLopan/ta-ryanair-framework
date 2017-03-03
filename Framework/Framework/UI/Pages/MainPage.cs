@@ -21,8 +21,10 @@ namespace Framework.UI.Pages
 
         
         //Actions action = new Actions(DriverFactory.Driver);
+        public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
+        public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']"));
 
-        public void Open()
+        public static void Open()
         {
             DriverFactory.Driver.Navigate().GoToUrl(Url);
         }
@@ -41,6 +43,10 @@ namespace Framework.UI.Pages
             ContinueButton.Click();
             LeavingDateInput.SendKeys(leavingDay);
             ArrivalDateInput.SendKeys(arrivalDay);
+        }
+        public static void OpenCheapFlight()
+        {
+            CheapFlightBtn.Click();
         }
     }
 }

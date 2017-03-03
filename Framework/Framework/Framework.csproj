@@ -75,7 +75,10 @@
     <Compile Include="Steps\CheckFlyOutFlyInDateSteps.cs" />
     <Compile Include="UI\Pages\BookingFlightPage.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
+    <Compile Include="UI\Pages\CheapFlightPage.cs" />
     <Compile Include="WebDriver\DriverFactory.cs" />
+    <Compile Include="Tools\PriceParser.cs" />
+    <Compile Include="Steps\LowestFareSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
