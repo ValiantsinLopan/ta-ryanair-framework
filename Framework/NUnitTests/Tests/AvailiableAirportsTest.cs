@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Framework.Steps;
 using Framework.Resources;
 using Framework.BusinessObjects;
+using NUnitTests.DataSources;
 
 namespace NUnitTests
 {
@@ -19,7 +20,7 @@ namespace NUnitTests
             step.Open();
         }
 
-        [Test, TestCaseSource(typeof(DataProviders), "TestCaseWithCountries")]
+        [Test, TestCaseSource(typeof(CountriesAndAirportsDataSource), "TestCaseWithCountries")]
         public void CheckCountriesAndAirports(string countryName, List<Airport> airports)
         {    
             step.ClickFlightsFrom();

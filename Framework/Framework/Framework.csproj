@@ -60,9 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\Airport.cs" />
-    <Compile Include="BusinessObjects\AllCountries.cs" />
-    <Compile Include="BusinessObjects\Country.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\Airport.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\AllCountries.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\Country.cs" />
     <Compile Include="BusinessObjects\Passengers.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,7 +71,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BrowserStack.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\DataProviders.cs" />
     <Compile Include="Resources\DriversPaths.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,8 +78,8 @@
     </Compile>
     <Compile Include="Resources\TestDataPaths.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>TestDataPaths.settings</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataPaths.resx</DependentUpon>
     </Compile>
     <Compile Include="Steps\AvailiableAirportsSteps.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
@@ -94,10 +93,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\TestDataPaths.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>TestDataPaths.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\BrowserStack.resx">
@@ -108,9 +103,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DriversPaths.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\CountriesWithAirports.xml" />
+    <EmbeddedResource Include="Resources\TestDataPaths.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestDataPaths.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
