@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Webdriver;
+using System.Threading;
 
 namespace NUnitTests.Tests
 {
@@ -18,9 +19,12 @@ namespace NUnitTests.Tests
         [Test]
         public void CheckFlightData()
         {
+            DriverFactory.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             step.OpenMainPage();
-            step.SelectFlight("Berlin", "Toulouse", "5","6");
-            
+            step.SelectFlight("Berlin", "Brussels", "5","5");
+            Thread.Sleep(7000);
+            step.SelectTickets();
+            Assert.IsFalse(step.IsPossibleSelectFirstBackTicket(),"");
         }
        
     }

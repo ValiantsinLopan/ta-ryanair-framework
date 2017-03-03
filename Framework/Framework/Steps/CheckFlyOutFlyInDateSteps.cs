@@ -6,13 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Interactions;
 using Framework.Webdriver;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
 
 namespace Framework.Steps
 {
     public class CheckFlyOutFlyInDateSteps
     {
         MainPage MainPage = new MainPage();
-        
+        BookingFlightPage BookingPage = new BookingFlightPage();
 
         public void OpenMainPage()
         {
@@ -24,7 +26,18 @@ namespace Framework.Steps
             MainPage.SelectDepatureDestination(depature,destination);
             MainPage.SelectLeavingArrivalDate(leavingDay, arrivalDay);
             MainPage.ContinueButton.Click();
+            MainPage.ContinueButton.Click();
         }
-        
+        public void SelectTickets()
+        { 
+            
+            BookingPage.SelectRegularTicketTo();
+
+            //BookingPage.SelectRegularTicketBack();
+        }
+        public bool IsPossibleSelectFirstBackTicket()
+        {
+            return BookingPage.IsFirstBackTicketAvailable();
+        }
     }
 }

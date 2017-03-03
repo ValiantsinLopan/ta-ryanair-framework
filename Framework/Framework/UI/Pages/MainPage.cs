@@ -1,5 +1,6 @@
 ﻿using Framework.Webdriver;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Interactions;
 
 
@@ -9,6 +10,7 @@ namespace Framework.UI.Pages
     {
         public const string Url = "https://www.ryanair.com/gb/en/";
 
+        //[FindsBy(How = How.XPath, Using = "//*[@class='core-btn-primary core-btn-block core-btn-big']")]
         public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-btn-primary core-btn-block core-btn-big']"));
         public IWebElement AirportSelectorFrom => DriverFactory.Driver.FindElement(By.XPath("//*[@id='label-airport-selector-from']"));
         public IWebElement AirportSelectorTo => DriverFactory.Driver.FindElement(By.XPath(".//*[@id='label-airport-selector-to']"));
