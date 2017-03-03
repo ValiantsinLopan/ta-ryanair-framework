@@ -35,7 +35,7 @@ namespace Framework.UI.Pages
 
         public static double GetPriceOfDayLabeledLowestFare()
         {
-            IWebElement dateOdElementWithLowestFare = DriverFactory.Driver.FindElement(By.XPath(LowestFareXPath));
+            var dateOdElementWithLowestFare = DriverFactory.Driver.FindElement(By.XPath(LowestFareXPath));
             return PriceParser.ParsePrice(dateOdElementWithLowestFare.Text);
         }
 

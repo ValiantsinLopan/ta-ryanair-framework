@@ -60,6 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\CountriesAndAirports\Airport.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\AllCountries.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\Country.cs" />
+    <Compile Include="BusinessObjects\Passengers.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\BrowserStack.Designer.cs">
@@ -72,6 +76,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DriversPaths.resx</DependentUpon>
     </Compile>
+    <Compile Include="Steps\CheckFlyOutFlyInDateSteps.cs" />
+    <Compile Include="UI\Elements\LogInForm.cs" />
+    <Compile Include="UI\Pages\BookingFlightPage.cs" />
+    <Compile Include="Resources\TestDataPaths.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataPaths.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\AvailiableAirportsSteps.cs" />
     <Compile Include="Steps\SaveTripSteps.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
     <Compile Include="UI\Pages\CheapFlightPage.cs" />
@@ -95,7 +108,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DriversPaths.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TestDataPaths.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestDataPaths.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\Selenium.Firefox.WebDriver.0.14.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.14.0\build\Selenium.Firefox.WebDriver.targets')" />
