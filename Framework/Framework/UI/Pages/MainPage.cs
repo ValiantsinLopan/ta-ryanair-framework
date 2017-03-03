@@ -22,7 +22,7 @@ namespace Framework.UI.Pages
         
         //Actions action = new Actions(DriverFactory.Driver);
         public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
-        public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']"));
+        
 
         public static void Open()
         {
