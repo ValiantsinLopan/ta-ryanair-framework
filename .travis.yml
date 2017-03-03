@@ -1,9 +1,6 @@
 language: csharp
-script:
-  - xbuild /p:Configuration=Debug Framework/Framework.sln
+solution: Framework/Framework.sln
 before_install:
   - sudo apt-get install nunit-console
 before_script:
   - nuget restore Framework/Framework.sln
-after_script:
-  - nunit-console Framework/NUnitTests/bin/Debug/NUnitTests.dll
