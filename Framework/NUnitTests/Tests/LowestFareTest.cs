@@ -16,7 +16,7 @@ namespace NUnitTests
             LowestFareSteps.GoToMainPage();
             MainPage.OpenCheapFlight();
             CheapFlightPage.ClickViewByMonth();
-            LowestFareSteps.CheckIfLowestFairCompliesTheLowestPrice();
+            Assert.True(LowestFareSteps.CheckIfLowestFairCompliesTheLowestPrice());
         }
     }
 }

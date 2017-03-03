@@ -52,6 +52,7 @@
     <Compile Include="BaseTest.cs" />
     <Compile Include="Tests\LowestFareTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\SaveTripTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
