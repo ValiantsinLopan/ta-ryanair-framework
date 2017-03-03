@@ -21,12 +21,10 @@ namespace NUnitTests.Tests
         {
             DriverFactory.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             step.OpenMainPage();
-            step.Login("l747662@mvrht.com", "1qaz@WSX");
-            Thread.Sleep(3000);
-            step.SelectFlight("Berlin", "Brussels", "5","5");
-            Thread.Sleep(5000);
+            step.SelectFlight("Berlin", "Brussels", "5", "5");
+            Thread.Sleep(7000);
             step.SelectTickets();
-            Assert.IsFalse(step.IsPossibleSelectFirstBackTicket(),"");
+            Assert.IsFalse(step.IsPossibleSelectFirstBackTicket(), "");
         }
        
     }

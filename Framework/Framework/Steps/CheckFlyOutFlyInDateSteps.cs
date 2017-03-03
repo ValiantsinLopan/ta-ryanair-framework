@@ -20,10 +20,6 @@ namespace Framework.Steps
         {
             MainPage.Open();
         }
-        public void Login(string login, string password)
-        {
-            MainPage.Login(login,password);
-        }
 
         public void SelectFlight(string depature, string destination, string leavingDay, string arrivalDay )
         {
