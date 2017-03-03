@@ -8,6 +8,7 @@ solution: Framework/Framework.sln
 before_install:
   - sudo apt-get install nunit-console
 install:
+  - sudo apt-get install -y gtk-sharp2
   - nuget restore Framework/Framework.sln
 script:
   - xbuild /p:Configuration=Release Framework/Framework.sln
