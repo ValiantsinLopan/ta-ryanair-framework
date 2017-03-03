@@ -25,7 +25,7 @@ namespace NUnitTests
         {    
             step.ClickFlightsFrom();
             step.EnterCountryName(countryName);
-            Assert.True(step.AirportsIsDisplayed(airports), $"problem with {countryName}");
+            Assert.True(step.AllAirportsAreDisplayed(airports), $"problem with {countryName}");
         }
 
     }

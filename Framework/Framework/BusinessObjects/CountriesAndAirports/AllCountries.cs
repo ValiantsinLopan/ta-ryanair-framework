@@ -13,8 +13,8 @@ namespace Framework.BusinessObjects
 
         public static AllCountries DeserialiseCountries(string filePath)
         {
-            var catalogSerialiser = new XmlSerializer(typeof(AllCountries));
-            return (AllCountries)catalogSerialiser.Deserialize(new XmlTextReader(filePath));
+            var countrySerialiser = new XmlSerializer(typeof(AllCountries));
+            return (AllCountries)countrySerialiser.Deserialize(new XmlTextReader(filePath));
         }
     }
 }

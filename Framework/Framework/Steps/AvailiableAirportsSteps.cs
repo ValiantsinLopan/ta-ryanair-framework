@@ -41,10 +41,10 @@ namespace Framework.Steps
         }
 
         /// <summary>
-        /// Check that all airports is displayed
+        /// Check that all airports are displayed
         /// </summary>
         /// <returns> true if all airports is displayed </returns>
-        public bool AirportsIsDisplayed(List<Airport> airports)
+        public bool AllAirportsAreDisplayed(List<Airport> airports)
         {
             bool checker = true;
             foreach (Airport currentAirport in airports)
