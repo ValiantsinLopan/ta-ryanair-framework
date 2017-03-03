@@ -61,15 +61,6 @@ namespace Framework.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Program Files\Mozilla Firefox\firefox.exe.
-        /// </summary>
-        public static string BinaryFirefox {
-            get {
-                return ResourceManager.GetString("BinaryFirefox", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Framework/bin/Debug.
         /// </summary>
         public static string ChromeDriver {
@@ -84,6 +75,15 @@ namespace Framework.Resources {
         public static string EdgeDriver {
             get {
                 return ResourceManager.GetString("EdgeDriver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C:\Program Files\Mozilla Firefox\firefox.exe.
+        /// </summary>
+        public static string FirefoxBinary {
+            get {
+                return ResourceManager.GetString("FirefoxBinary", resourceCulture);
             }
         }
         
