@@ -20,8 +20,6 @@ namespace Framework.UI.Pages
         public IWebElement LeavingDateInput => DriverFactory.Driver.FindElement(By.XPath(".//*[@class='container-from']//div[@class='disabled-wrap date-input']/input[1]"));
         public IWebElement ArrivalDateInput => DriverFactory.Driver.FindElement(By.XPath("//*[@class='container-to']//div[@class='disabled-wrap date-input']/input[1]"));
 
-        public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
-        
         public IWebElement LogInButton => DriverFactory.Driver.FindElement(By.XPath("//*[@id='myryanair-auth-login']"));
         
         public const string SearchContainerXPath = "//div[@id='search-container']";
