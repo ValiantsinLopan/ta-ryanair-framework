@@ -21,7 +21,6 @@ namespace Framework.UI.Pages
         public const string SearchContainerXPath = "//div[@id='search-container']";
 
         public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
-        public IWebElement FlightsFrom => DriverFactory.Driver.FindElement(By.XPath(".//*[@class='col-departure-airport']//div[@class='disabled-wrap']/input"));
 
         public static void Open()
         {

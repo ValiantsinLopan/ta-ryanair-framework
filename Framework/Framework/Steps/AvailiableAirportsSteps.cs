@@ -18,8 +18,8 @@ namespace Framework.Steps
         /// </summary>
         public void ClickFlightsFrom()
         {
-            mainPage.FlightsFrom.Clear();
-            mainPage.FlightsFrom.Click();
+            mainPage.FromInput.Clear();
+            mainPage.FromInput.Click();
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Framework.Steps
         /// </summary>
         public void EnterCountryName(string countryName)
         {
-            mainPage.FlightsFrom.SendKeys(countryName);
+            mainPage.FromInput.SendKeys(countryName);
         }
 
         /// <summary>
