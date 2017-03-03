@@ -11,7 +11,7 @@ using System.Threading;
 namespace NUnitTests.Tests
 {
     [TestFixture, Parallelizable(ParallelScope.Fixtures)]
-    public class TestCase5 : BaseTest
+    public class CheckFlyOutFlyInDate : BaseTest
 
     {
         private CheckFlyOutFlyInDateSteps step = new CheckFlyOutFlyInDateSteps();
