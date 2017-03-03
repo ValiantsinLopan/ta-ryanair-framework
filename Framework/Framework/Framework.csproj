@@ -60,6 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\CountriesAndAirports\Airport.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\AllCountries.cs" />
+    <Compile Include="BusinessObjects\CountriesAndAirports\Country.cs" />
     <Compile Include="BusinessObjects\Passengers.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DriversPaths.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\TestDataPaths.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataPaths.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\AvailiableAirportsSteps.cs" />
     <Compile Include="Steps\PreviousSearchSteps.cs" />
     <Compile Include="UI\Pages\MainPage.cs" />
     <Compile Include="UI\Pages\CheapFlightPage.cs" />
@@ -94,6 +103,10 @@
     <EmbeddedResource Include="Resources\DriversPaths.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DriversPaths.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TestDataPaths.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestDataPaths.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

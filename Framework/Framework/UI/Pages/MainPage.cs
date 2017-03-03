@@ -6,10 +6,11 @@ namespace Framework.UI.Pages
     public class MainPage
     {
         public const string Url = "https://www.ryanair.com/gb/en/";
+        public const string SearchContainerXPath = "//div[@id='search-container']";
+
         public static IWebElement CheapFlightBtn => DriverFactory.Driver.FindElement(By.XPath("//*[@class='farefinder-card ']"));
         public IWebElement ContinueButton => DriverFactory.Driver.FindElement(By.XPath("//*[@class='core-input ng-pristine ng-valid ng-not-empty ng-touched']"));
-        public IWebElement LeavingDateInput => DriverFactory.Driver.FindElement(By.XPath(".//*[@class='container-from']//div[@class='disabled-wrap date-input']/input[1]"));
-        public IWebElement ArrivalDateInput => DriverFactory.Driver.FindElement(By.XPath("//*[@class='container-to']//div[@class='disabled-wrap date-input']/input[1]"));
+        public IWebElement FlightsFrom => DriverFactory.Driver.FindElement(By.XPath(".//*[@class='col-departure-airport']//div[@class='disabled-wrap']/input"));
 
         public static void Open()
         {
@@ -21,11 +22,14 @@ namespace Framework.UI.Pages
             CheapFlightBtn.Click();
         }
 
-        public void SelectLeavingArrivalDate(string leavingDay, string arrivalDay)
+        /// <summary>
+        /// Finds elements with name of airport
+        /// </summary>
+        /// <returns> element with name of airport </returns>
+        public IWebElement GetAirportName(string nameOfAirport)
         {
-            ContinueButton.Click();
-            LeavingDateInput.SendKeys(leavingDay);
-            ArrivalDateInput.SendKeys(arrivalDay);
+            return DriverFactory.Driver.FindElement(By.XPath($"{SearchContainerXPath}//*[text()=\"{nameOfAirport}\"]"));
         }
+
     }
 }
